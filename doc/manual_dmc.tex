@@ -1,0 +1,127 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[letterpaper,12pt]{article}
+
+
+\pagestyle{plain}
+\usepackage{pdftricks}
+\usepackage[utf8x]{inputenc} % Caracteres con acentos.
+\usepackage[T1]{fontenc} 
+\usepackage{enumerate}
+\usepackage[spanish]{babel} % TÌtulos en espaÒol
+\usepackage{latexsym} % SÌmbolos
+\usepackage{graphicx} %Soporte de gr·ficos
+\usepackage{multicol} %Texto a doble columna
+\usepackage{theorem} %Permite hacerle algunos ajustes a los teoremas
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{wrapfig} %InclusiÛn de gr·ficos al lado de texto
+\usepackage{amssymb,amsmath}
+\usepackage{subfigure}
+\usepackage[nottoc]{tocbibind}
+\usepackage{breakcites}
+%\usepackage{pstricks}
+\usepackage[section]{placeins}
+\usepackage{mathrsfs}
+\usepackage{mathbbol}
+\usepackage[margin=2.5 cm,nohead]{geometry} 
+\usepackage{anyfontsize}
+\usepackage{fmtcount}
+\usepackage{yfonts}
+\usepackage{dsfont}
+\usepackage{footnote}
+\usepackage[toc]{appendix}
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\linespread{1.2}
+\makesavenoteenv{tabular}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\appendixpagename}{Ap\'endices}
+\renewcommand{\appendixtocname}{Ap\'endices}
+\interfootnotelinepenalty=10000
+
+
+\hyphenation{ha-mil-to-nia-no li-ber-tad vibrorro-ta-cio-na-les ener-gia rea-li-za-do con-ti-nua-ran re-gu-lar re-so-nan-cias si-guien-te ajus-tan-do acer-can-do corres-pon-de des-aco-pla-do ma-yor Le-gen-dre ellos ma-ne-ra tem-pe-ra-tu-ras va-ria-bles re-gu-la-ri-dad va-lo-res co-rres-pon-dien-te}
+
+% \begin{equation}
+ %\hbox{\boldmath $ \ell $ \unboldmath}\hspace{-0.1cm}
+%\end{equation}
+ % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+     %\date{\vspace{-5ex}}
+	% remember to use [htp] or [htpb] for placement
+\pagestyle{empty}  
+\begin{document}
+%\begin{titlepage}
+
+
+
+
+\begin{center}
+
+
+   \Huge {\bf{  Manual Programa Difusión de Monte Carlo nuclear\\
+   }}
+                
+\end{center}
+
+
+               \normalsize
+               
+               \begin{enumerate}
+               \item Directorios principales
+               \begin{enumerate}
+               \item make. Es el directorio donde se encuentra el makefile
+               \item bin. En este directorio se creará el ejecutable y en bin/objs se copian los archivos .o y .mod creados en la compilación
+               \item results. Es el directorio de entrada, contiene el archivo data.inp donde se especifican todos los datos de la simulación. en la primera línea, donde pone title, se creará un directorio con ese nombre y se agregarán todos los archivos de salida.
+               \item doc. Se encuentra este archivo que contiene la documentación del programa.
+               \item src. Contiene todo el código generado
+               \end{enumerate}
+               
+               
+               \item Programas principales en el directorio src
+               \begin{enumerate}
+               \item types.f90. Define el tipo de variables
+               \item stringmod.f90. Módulo para trabajar con variables tipo caracter,
+               \item math.f90. Módulo con diversas subrutinas matemáticas.
+               \item globals.f90. Define variables globales
+               \item physicalconstants.f90. Define constantes físicas de distintos átomos y moléculas
+               \item reading.f90. Lee el archivo data.inp e inicializa todas las variables.
+               \item hcl2pot.f90. Calcula el potencial para un dímero de HCl (no se utilizará por el momento)
+               \item potinterpol. Calcula el potencial como un desarrollo en polinomios de Legendre (no se aplica por el momento)
+               \item pohxhe.f90. Calcula el potencial He-molécula para diferentes moléculas. de momento se tienen implementados los potenciales de HCl, HF, HBr y HCN. 
+               \item potcal.f90. El driver para el cálculo de los potenciales
+               \item quadrature.f90. No implementado
+%               \item dmc_drv.f90. Programa que realiza la simulación de difusión de Montecarlo. Tiene la parte de difusión, la parte de branching e incluye la función de importance sampling. Además está también el potencial He-He
+               \item main.f90. Programa principal
+               
+              
+               \end{enumerate}
+               \end{enumerate}
+               
+               
+      
+       
+\end{document}
+
+
+
+
+
+
+
+

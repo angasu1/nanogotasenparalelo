@@ -1,0 +1,24 @@
+ title HFesfullpot11he
+#fixr   #Mainly for debugging. If activated, it starts always with the same seed 
+ st dmc
+ mt lm  #lm:linear monomer, ld:linear dimer
+ mn hf  #molecule name 
+ pt 1  #potential type 1 for using the normal functions and 2 to use interpolation parameters(after molname)
+&
+nw 2000  #number of walkers
+nhe 1   #number of helium atoms
+nmon 1 #if mt is ld(linear dimer) For the moment fix to 2 for a dimer and one for a monomer
+state 1 #Quantum state to calculate(see manual)
+node  1  #Node type(not implemented yet)
+stps  1000000   #numbr of steps
+dtau  1.5   #time step in a.u.
+nruns 1
+#potterms 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 % #put all the terms we want to use in the potential
+#weights  1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0  #put all the weights we want to use in the potential(should be after potterms)
+#is  #To use importance sampling
+#mm  #to turn off mol-mol potential
+#mh  #to turn off mol-he potential
+#hh  #to turn off he-he potential
+#frotmol   1.0  #A factor to multply the rotational constant of molecule
+#fdc   1.0  #A factor to multply the diffusion constant of center of masses
+&
